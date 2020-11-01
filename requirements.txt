@@ -1,0 +1,6 @@
+scikit-build
+numpy
+argparse
+opencv-python
+captcha
+tflite
