@@ -61,7 +61,7 @@ case $exitstatus in
 esac
 
 echo 'Running classification'
-python3 classify.py --model-name model/model_2 --captcha-dir in/temp/ --output out/model_2_output.txt --symbols model/symbols.txt --captcha-len 5 --processes 4
+python3 classify.py --model-name model/model_2 --captcha-dir ~/solver/in/ --output ~solver/out/model_2_output.txt --symbols model/symbols.txt --captcha-len 5 --processes 4
 exitstatus=$?
 if [$exitstatus == 0]
 then
