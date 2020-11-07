@@ -34,7 +34,7 @@ case $exitstatus in
 esac
 
 echo 'attempting to update / install needed packages (timeout 300 seconds)'
-timeout 300 pip3 install --update -r requirements.txt
+timeout 300 pip3 install -U -r requirements.txt
 exitstatus=$?
 case $exitstatus in
     124)
