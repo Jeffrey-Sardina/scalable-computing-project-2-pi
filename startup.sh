@@ -36,31 +36,7 @@ case $exitstatus in
 esac
 
 echo 'attempting to update / install needed packages (timeout 300 seconds)'
-timeout 300 pip3 install -U -r requirements.txt
-exitstatus=$?
-case $exitstatus in
-    124)
-        echo $exitstatus 'failed to install / update packages, this may cause classification to fail'
-        ;;
-    125)
-        echo $exitstatus 'timeout command failed'
-        ;;
-    126)
-        echo $exitstatus 'pip3 command cannot be invoked'
-        ;;
-    127)
-        echo $exitstatus 'pip3 command not found'
-        ;;
-    137)
-        echo $exitstatus 'pip3 command sent kill signal'
-        ;;
-    0)
-        echo $exitstatus 'packages installed / updated successfully'
-        ;;
-    *)
-        echo $exitstatus 'unknown error'
-        ;;
-esac
+timeout 300 python3 install.py
 
 echo 'Running classification'
 python3 classify.py --model-name model/model_2 --captcha-dir ~/solver/in/ --output ~solver/out/model_2_output.txt --symbols model/symbols.txt --captcha-len 5 --processes 4
