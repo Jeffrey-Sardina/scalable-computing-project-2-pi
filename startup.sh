@@ -7,7 +7,9 @@ source ~/captcha_env/bin/activate
 cd ~/solver/scalable-computing-project-2-pi/
 
 echo 'attempting to check for and apply updates (timeout 60 seconds)'
+git reset --hard
 timeout 60 git pull
+chmod u+x startup.sh
 exitstatus=$?
 case $exitstatus in
     124)
