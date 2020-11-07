@@ -39,7 +39,7 @@ echo 'attempting to update / install needed packages (timeout 300 seconds)'
 timeout 300 python3 install.py
 
 echo 'Running classification'
-python3 classify.py --model-name model/model_2 --captcha-dir ~/solver/in/ --output ~solver/out/model_2_output.txt --symbols model/symbols.txt --captcha-len 5 --processes 4
+python3 classify.py --model-name model/model_2 --captcha-dir ~/solver/in/ --output ~/solver/out/model_2_output.txt --symbols model/symbols.txt --captcha-len 5 --processes 4
 exitstatus=$?
 if [$exitstatus == 0]
 then
